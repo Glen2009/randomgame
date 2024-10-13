@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width",initial-scale=1.0">
+
+    <head>
+        <style>
+                body{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                height: 100vh;
+                background-color:white;
+                animation: colorchange 60s infinite;
+            }
+            @keyframes colorchange {
+                0%{background-color:rgb(255, 0, 0)}
+                4%{background-color: rgb(240, 4, 216);}
+                8%{background-color: rgb(128, 0, 227)}
+                12%{background-color:rgb(111, 0, 222) ;}
+                16%{background-color: rgb(0, 98, 246);}
+                20%{background-color: rgb(0, 160, 245);}
+                24%{background-color: rgb(0, 255, 251);}
+                28%{background-color: rgb(0, 255, 170);}
+                32%{background-color: rgb(0, 252, 55);}
+                36%{background-color: rgb(87, 249, 0);}
+                40%{background-color: rgb(191, 255, 0);}
+                44%{background-color: rgb(249, 253, 0);}
+                48%{background-color: rgb(255, 213, 0);}
+                52%{background-color: rgb(255, 106, 0);}
+                56%{background-color: rgb(177, 62, 28);}
+                60%{background-color: rgb(99, 44, 62);}
+                64%{background-color: rgb(57, 157, 52);}
+                68%{background-color: rgb(63, 56, 126);}
+                72%{background-color: rgb(52, 144, 146);}
+                76%{background-color: rgb(164, 158, 48);}
+                80%{background-color: rgba(0, 255, 170, 0.062);}
+                84%{background-color: rgb(255, 1, 1);}
+                88%{background-color: rgba(118, 36, 107, 0.363);}
+                92%{background-color: rgb(135, 170, 29);}
+                96%{background-color: rgb(46, 47, 16);}
+                100%{background-color: rgb(9, 9, 9);}
+            }
+            #scr
+            {
+                position: absolute;
+                height: 2cm;
+                width: 6cm;
+                background-color: wheat;
+                margin: -11cm 2cm 2cm 2cm;
+                font-size:  x-large;
+                font-style:italic;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                border: solid red 5px;
+                border-top-right-radius: 20px;
+                border-top-left-radius: 20px;
+                border-bottom-right-radius:20px ;
+                border-bottom-left-radius: 20px;
+            }
+            #scrx
+            {
+                position: absolute;
+                height: 0.8cm;
+                width: 3cm;
+                background-color: wheat;
+                margin: -10.5cm 2cm 2cm 2cm;
+                font-size: x-large;
+                border: solid rgb(0, 255, 68) 5px;
+                border-top-right-radius: 20px;
+                border-top-left-radius: 20px;
+                border-bottom-right-radius:20px ;
+                border-bottom-left-radius: 20px;
+            }
+            #box
+            {
+                position: absolute;
+                height: 11cm;
+                width: 9cm;
+                margin: 4cm 2cm 2cm 2cm;
+                background-color: white;
+                border-top-right-radius: 10px;
+                border-top-left-radius: 10px;
+                border-bottom-right-radius:10px ;
+                border-bottom-left-radius: 10px;
+                border:solid rgba(68, 0, 177, 0.217) 12px;
+                box-shadow: 20px rgb(0, 128, 111);
+            }
+            /*Submit button(visible at beginning)*/
+            #subm1
+            {
+                position: absolute;
+                height: 0.75cm;
+                width: 2.5cm;
+                background-color: rgb(22, 202, 22);
+                margin: 0cm 2cm 2cm 2cm;
+                border-top-right-radius: 15px;
+                border-top-left-radius: 15px;
+                border-bottom-right-radius:15px ;
+                border-bottom-left-radius: 15px;
+                color: white;
+                cursor: pointer;
+            }
+            #subm2
+            {
+                display: none;
+                position: absolute;
+                height: 0.75cm;
+                width: 2.5cm;
+                background-color: rgb(202, 22, 109);
+                margin: 0cm 2cm 2cm 2cm;
+                border-top-right-radius: 15px;
+                border-top-left-radius: 15px;
+                border-bottom-right-radius:15px ;
+                border-bottom-left-radius: 15px;
+                color: white;
+                cursor: pointer;
+            }
+            #subm:hover
+            {
+                position: absolute;
+                background-color: rgb(45, 109, 45);
+                transition: 0.5s ease;
+                color: white;
+            }
+            /* input field visible at beginning*/
+            #inputfield1
+            {
+                position: absolute;
+                background-color: rgb(255, 255, 255);
+                height: 0.5cm;
+                width: 2.5cm;
+                margin: -2cm 2cm 2cm 2cm;
+                background-color: white;
+                border-top-right-radius: 5px;
+                border-top-left-radius: 5px;
+                border-bottom-right-radius:5px ;
+                border-bottom-left-radius: 5px;
+            }
+            /* input field initially hiden*/
+            #inputfield2
+            {
+                display: none;
+                position: relative;
+                background-color: rgb(255, 255, 255);
+                height: 0.5cm;
+                width: 2.5cm;
+                margin: -2cm 2cm 2cm 2cm;
+                background-color: white;
+                border-top-right-radius: 5px;
+                border-top-left-radius: 5px;
+                border-bottom-right-radius:5px ;
+                border-bottom-left-radius: 5px;
+            }
+            #disc
+            {
+                font-size: larger;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                position: absolute;
+                display: block;
+                background-color: rgb(238, 2, 2);
+                border:solid rgb(255, 255, 255);
+                height: 0.75cm;
+                width: 2.5cm;
+                margin: -4cm 4.25cm 2cm 2cm;
+            }
+            #disc2
+            {
+                
+                font-size: larger;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                position: absolute;
+                display: block;
+                background-color: rgb(0, 255, 72);
+                border:solid rgb(255, 255, 255);
+                height: 0.75cm;
+                width: 2.5cm;
+                margin: -4cm -0.5cm 2cm 2cm;
+            }
+            #disc3
+            {
+                font-size: xx-large;
+                position: absolute;
+                display: block;
+                background-color: rgb(255, 255, 255);
+                border:solid rgb(255, 255, 255);
+                height: 0.75cm;
+                width: 2.5cm;
+                margin: -6cm 1.95cm 2cm 2cm;
+                border-top-right-radius: 20px;
+                border-top-left-radius: 20px;
+                border-bottom-right-radius:20px ;
+                border-bottom-left-radius: 20px;
+            }
+            #rest
+            {
+               position: absolute;
+               display: block;
+               font-size: large;
+               font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+               height: 1cm;
+               width: 2cm;
+               background-color: rgb(81, 255, 0);
+               color: white;
+               margin: 10.25cm 2cm 2cm 2cm;
+               cursor: pointer;
+               border-top-right-radius: 10px;
+               border-top-left-radius: 10px;
+               border-bottom-right-radius:10px ;
+               border-bottom-left-radius: 10px;
+            }
+            #sve
+            {
+               position: absolute;
+               display: none;
+               font-size: large;
+               font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+               height: 1cm;
+               width: 5cm;
+               background-color: rgb(214, 25, 91);
+               color: white;
+               margin: 12.75cm 2cm 2cm 2cm;
+               cursor: pointer;
+               border-top-right-radius: 10px;
+               border-top-left-radius: 10px;
+               border-bottom-right-radius:10px ;
+               border-bottom-left-radius: 10px;
+            }
+            #n1
+            {
+                position: absolute;
+                background-color: rgb(234, 224, 224);
+                height: 0.75cm;
+                width: 0.75cm;
+                margin: 2cm 4cm 2cm 2cm;
+                border-radius: 50%;
+                border: solid black;
+                text-align: center;
+                display: inline-block;
+                font-size: large;
+                cursor: pointer;
+            }
+            #n2
+            {
+                position: absolute;
+                background-color: rgb(234, 224, 224);
+                height: 0.75cm;
+                width: 0.75cm;
+                margin: 2cm 2cm 2cm 2cm;
+                border-radius: 50%;
+                border: solid black;
+                text-align: center;
+                display: inline-block;
+                font-size: large;
+                cursor: pointer;
+            }
+            #n3
+            {
+                position: absolute;
+                background-color: rgb(234, 224, 224);
+                height: 0.75cm;
+                width: 0.75cm;
+                margin: 2cm 0cm 2cm 2cm;
+                border-radius: 50%;
+                border: solid black;
+                text-align: center;
+                display: inline-block;
+                font-size: large;
+                cursor: pointer;
+            }
+            #n4
+            {
+                position: absolute;
+                background-color: rgb(234, 224, 224);
+                height: 0.75cm;
+                width: 0.75cm;
+                margin: 4cm 4cm 2cm 2cm;
+                border-radius: 50%;
+                border: solid black;
+                text-align: center;
+                display: inline-block;
+                font-size: large;
+                cursor: pointer;
+            }
+            #n5
+            {
+                position: absolute;
+                background-color: rgb(234, 224, 224);
+                height: 0.75cm;
+                width: 0.75cm;
+                margin: 4cm 2cm 2cm 2cm;
+                border-radius: 50%;
+                border: solid black;
+                text-align: center;
+                display: inline-block;
+                font-size: large;
+                cursor: pointer;
+            }
+            #n6
+            {
+                position: absolute;
+                background-color: rgb(234, 224, 224);
+                height: 0.75cm;
+                width: 0.75cm;
+                margin: 4cm 0cm 2cm 2cm;
+                border-radius: 50%;
+                border: solid black;
+                text-align: center;
+                display: inline-block;
+                font-size: large;
+                cursor: pointer;
+            }
+            #n7
+            {
+                position: absolute;
+                background-color: rgb(234, 224, 224);
+                height: 0.75cm;
+                width: 0.75cm;
+                margin: 6cm 4cm 2cm 2cm;
+                border-radius: 50%;
+                border: solid black;
+                text-align: center;
+                display: inline-block;
+                font-size: large;
+                cursor: pointer;
+            }
+            #n8
+            {
+                position: absolute;
+                background-color: rgb(234, 224, 224);
+                height: 0.75cm;
+                width: 0.75cm;
+                margin: 6cm 2cm 2cm 2cm;
+                border-radius: 50%;
+                border: solid black;
+                text-align: center;
+                display: inline-block;
+                font-size: large;
+                cursor: pointer;
+            }
+            #n9
+            {
+                position: absolute;
+                background-color: rgb(234, 224, 224);
+                height: 0.75cm;
+                width: 0.75cm;
+                margin: 6cm 0cm 2cm 2cm;
+                border-radius: 50%;
+                border: solid black;
+                text-align: center;
+                display: inline-block;
+                font-size: large;
+                cursor: pointer;
+            }
+            #n0
+            {
+                position: absolute;
+                background-color: rgb(234, 224, 224);
+                height: 0.75cm;
+                width: 0.75cm;
+                margin: 8cm 2cm 2cm 2cm;
+                border-radius: 50%;
+                border: solid black;
+                text-align: center;
+                display: inline-block;
+                font-size: large;
+                cursor: pointer;
+            }
+            #C1
+            {
+                position: absolute;
+                background-color: rgb(234, 224, 224);
+                height: 0.75cm;
+                width: 0.75cm;
+                margin: 8cm 0cm 2cm 2cm;
+                border-radius: 50%;
+                border: solid black;
+                text-align: center;
+                display: inline-block;
+                font-size: large;
+                cursor: pointer;
+            }
+            #C2
+            {
+                position: absolute;
+                background-color: rgb(234, 224, 224);
+                height: 0.75cm;
+                width: 0.75cm;
+                margin: 8cm 4cm 2cm 2cm;
+                border-radius: 50%;
+                border: solid black;
+                text-align: center;
+                display: inline-block;
+                font-size: large;
+                cursor: pointer;
+            }
+        </style>
+        </head>
+        <body>
+            <div id="box"></div>
+            <input type="number" id="inputfield1" placeholder="Enter Limit">
+            <br>
+            <input type="number" id="inputfield2" placeholder="Click numbers">
+            <br>
+            <p id="res"></p>
+            <button id="subm1">SUBMIT</button>
+            <button id="subm2">SUBMIT</button>
+            <button id="rest">RESET</button>
+            <button id="sve">SAVE SCORE</button>
+            <div id="scr">Your Score:</div>
+            <div id="scrx">0</div>
+            <div id="disc">0</div>
+            <div id="disc2">0</div>
+            <div id="disc3"></div>
+            <button class="key" id="n1" data-value="1">1</button>
+            <button class="key" id="n2" data-value="2">2</button>
+            <button class="key" id="n3" data-value="3">3</button>
+            <button class="key" id="n4" data-value="4">4</button>
+            <button class="key" id="n5" data-value="5">5</button>
+            <button class="key" id="n6" data-value="6">6</button>
+            <button class="key" id="n7" data-value="7">7</button>
+            <button class="key" id="n8" data-value="8">8</button>
+            <button class="key" id="n9" data-value="9">9</button>
+            <button class="key" id="n0" data-value="0">0</button>
+            <button class="key" id="C1">C</button>
+            <button class="key" id="C2">C</button>
+        </body>
+        <script>
+        const inputField1=document.getElementById('inputfield1');
+        const inputField2=document.getElementById('inputfield2');
+        const dis=document.getElementById('disc');
+        let activeInputField = inputField1;
+        const keys = document.querySelectorAll('.key');
+        const resebtn=document.getElementById('rest')
+        keys.forEach(key=>
+        {
+            key.onclick=function()
+            {
+                const value=key.getAttribute('data-value');
+                activeInputField.value+=value;
+            }
+        }
+        );
+        const clr1=document.getElementById('C1');
+        const clr2=document.getElementById('C2');
+        clr1.onclick=function()
+        {
+            inputField1.value=inputField1.value.slice(0, -1);
+            inputField2.value = inputField2.value.slice(0, -1);
+        }
+        clr2.onclick=function()
+        {
+            inputField1.value=inputField1.value.slice(0, -1);
+            inputField2.value = inputField2.value.slice(0, -1);
+        }
+        const submit1=document.getElementById('subm1');
+        const submit2=document.getElementById('subm2');
+        submit1.onclick=function()
+        {
+            const limit=document.getElementById('inputfield1').value;
+            inputField1.style.display='none';
+            inputField2.style.display='block';
+            submit1.style.display='none';
+            submit2.style.display='block'
+            activeInputField = inputField2;
+            inputField2.focus();
+        };
+        let score=0;
+        submit2.onclick = function() {
+        const limit=parseFloat(document.getElementById('inputfield1').value)
+        const disp1 = document.getElementById('disc');
+        const disp2=document.getElementById('disc2');
+        const disp3=document.getElementById('disc3')
+        const enno = parseFloat(document.getElementById('inputfield2').value);
+        const resetbtn=document.getElementById('rest');
+        const savebtn=document.getElementById('sve');
+        const scores=document.getElementById('scrx');
+        const gnnum = Math.floor(Math.random() * limit)+1 ;
+        disp1.innerText = `${enno}`;
+        disp2.innerText=`${gnnum}`;
+        resetbtn.style.display='block';
+        savebtn.style.display='block';
+        if(gnnum === enno)
+        {
+            score=score+1;
+            disp1.style.backgroundColor=' lightgreen';
+            disp3.innerText='=';
+        }
+        else{disp3.innerText='≠';}
+        scores.innerText=score;
+        };
+        window.onload=function()
+        {
+            const scorerel=localStorage.getItem('score');
+            if(scorerel)
+        {
+            score = Number(scorerel);
+            document.getElementById('scrx').innerText=score;
+        }
+        }
+        const resetbtn=document.getElementById('rest');
+        resetbtn.onclick=function()
+        {
+        const disp1 = document.getElementById('disc');
+        const disp2=document.getElementById('disc2');
+        const disp3=document.getElementById('disc3');
+        const scores=document.getElementById('scrx');
+        disp1.innerText='0';
+        disp2.innerText='0';
+        disp3.innerText=' ';
+        scores.innerText='0';
+        inputField1.style.display='block';
+        inputField2.style.display='none';
+        inputField1.value=' ';
+        inputField2.value=' ';
+        submit1.style.display='block';
+        submit2.style.display='none';
+        activeInputField=inputField1;
+        score = 0;
+        localStorage.setItem('score', score);
+        }
+        window.addEventListener('beforeunload', () => {
+        console.log('Do you want to save changes');
+         });
+         const savebtn=document.getElementById('sve');
+         savebtn.onclick=function(){
+            localStorage.setItem('score',score);
+         }
+        </script>
+</html>
